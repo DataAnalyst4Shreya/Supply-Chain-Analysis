@@ -1,1 +1,48 @@
+-- =====================================
+-- Inventory Analysis
+-- =====================================
 
+-- =====================================
+-- 1. Inventory Health & Risk Analysis
+-- =====================================
+/* 
+   Calculates the 'buffer gap' (current stock vs. safety threshold) 
+   to identify items at risk of stockouts, prioritized by urgency.
+*/
+
+SELECT
+      product_id,
+      record_date,
+      stock_level,
+      safety_stock,
+      stock_level - safety_stock AS buffer_gap, -- Negative values indicate a deficit
+      
+      CASE
+          WHEN stock_level < safety_stock THEN 'AT RISK'
+          ELSE 'SAFE'
+          END AS stock_status
+FROM
+      inventory
+ORDER BY
+      buffer_gap ASC;
+
+
+-- =====================================
+-- 2. Inventory Trend Analysis
+-- =====================================
+
+/* 
+Purpose: Calculate chronological stock fluctuations per product.
+Logic: 
+  - PARTITION BY ensures we only compare a product's stock to its own history.
+  - LAG() is a Window function which retrieves the previous record's stock level to measure change.
+*/
+
+SELECT
+      product_id,
+      record_date,
+      LAG(stock_level) OVER(PARTITION BY product_id ORDER BY record_date) AS prev_stock,
+      -- CAST both values to integers so you can subtract them
+      CAST(stock_level AS INT) - LAG(CAST(stock_level AS INT)) OVER(PARTITION BY product_id ORDER BY record_date) AS stock_change
+FROM
+      inventory;
