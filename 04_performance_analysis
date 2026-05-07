@@ -1,0 +1,23 @@
+-- =========================================
+--  FULFILLMENT PERFORMANCE ANALYSIS
+-- =========================================
+
+/* 
+   Calculates core inventory KPIs per product to identify supply chain gaps.
+   - total_demand: Total quantity requested by customers.
+   - backlog: Unfilled orders (potential revenue loss).
+   - fulfillment_rate: Service level metric; uses NULLIF to prevent divide-by-zero 
+     and CAST to ensure decimal precision for percentage analysis.
+*/
+
+
+SELECT
+      product_id,
+      SUM(quantity_ordered) AS total_demand,
+      SUM(quantity_fulfilled) AS total_fulfilled,
+      SUM(quantity_fulfilled) - SUM(quantity_ordered) AS order_backlog,
+      SUM(quantity_fulfilled) * 1.0/ NULLIF(SUM(quantity_ordered), 0) AS fulfillment_rate
+FROM
+      orders
+GROUP BY
+      product_id;
