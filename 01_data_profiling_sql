@@ -1,1 +1,133 @@
+-- =====================================
+-- Data profiling
+-- =====================================
+- =====================================
+-- 1. Checking Row Counts Per Table
+-- =====================================
+
+SELECT
+      'products' AS products_table,
+      COUNT(*) AS num_rows_products
+FROM
+    products
+
+UNION ALL
+
+SELECT
+      'fabs' AS fabs_table,
+      COUNT(*) AS num_rows_fabs
+FROM
+      fabs
+
+UNION ALL
+
+SELECT
+      'production' AS production_table,
+      COUNT(*) AS num_rows_production
+FROM
+      production
+
+UNION ALL
+
+SELECT
+      'orders' AS orders_table,
+      COUNT(*) AS num_rows_orders
+FROM
+      orders
+
+UNION ALL
+
+SELECT
+      'inventory' AS inventory_table,
+      COUNT(*) AS num_rows_inventory
+FROM
+      inventory
+
+UNION ALL
+
+SELECT
+      'capacity_plan' AS capacity_plan_table,
+      COUNT(*) AS num_rows_capacity_plan
+FROM
+    capacity_plan;
+
+
+- =====================================
+-- 2. Inspecting Column Structure
+-- =====================================
+/*
+-- INFORMATION.SCHEMA IS a system-level metadata container where 
+sql stores information about tables
+-- COLUMNS written with information.schema - specifically stores column-level information
+--Metadata layer (system information about tables)
+*/
+
+SELECT 
+      TABLE_NAME,
+      COLUMN_NAME,
+      DATA_TYPE
+FROM
+      INFORMATION_SCHEMA.COLUMNS --- querying database metadata (structure)--
+ORDER BY
+      TABLE_NAME;
+
+
+- ===========================================
+-- 3. Understanding product mix by analyzing 
+frequency of each product type
+-- ==========================================
+
+/* Data Profiling: Product portfolio composition across 
+semiconductor categories (CPU, GPU, Chipset, etc.) */
+
+SELECT
+      product_type,
+      COUNT(*) AS cnt -- counts how many rows per category exist
+FROM
+      products
+GROUP BY
+      product_type -- group by collapses rows into categories
+HAVING
+      COUNT(*) > 1; --just removes categories with only 1 item
+
+
+- ===========================================
+-- 4.  Production scale analysis to understand 
+manufacturing output range and typical throughput
+-- ==========================================
+/* Data Profiling: Distribution summary of 
+production quantities (min, max, avg) */
+-- “What is the scale and behavior of my numeric data?”
+
+SELECT
+      MAX(CAST(quantity_produced AS FLOAT)) AS max_quantity, -- Finds the largest production value
+      MIN(CAST(quantity_produced AS FLOAT)) AS min_quantity, -- Finds the smallest production value in the dataset
+      AVG(CAST(quantity_produced AS FLOAT)) AS avg_quantity -- Calculates mean production across all records
+FROM
+      production;
+-- avg_quantity is the typical throughput
+-- its the baseline production capacity
+
+
+- ====================================================================
+-- 5.  Product portfolio composition to assess category-wise 
+distribution and workload concentration in semiconductor manufacturing
+-- ===================================================================
+
+/* Data Profiling: Analyzing product mix to understand category-wise 
+distribution (CPU, GPU, Chipset, etc.) */
+
+--“How many products exist in each product type (CPU, GPU, Chipset, etc.)?”
+
+SELECT
+      product_type,
+      COUNT(*) AS cnt
+FROM
+      products
+GROUP BY
+      product_type
+ORDER BY
+      cnt DESC;
+
+
 
