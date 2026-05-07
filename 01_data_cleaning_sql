@@ -1,1 +1,145 @@
+-- =====================================
+-- Data Cleaning
+-- =====================================
 
+-- ==========================================
+-- 1. Remove records with NULLs
+in critical production fields 
+-- ==========================================
+
+SELECT
+      *
+FROM
+      production
+WHERE
+     product_id IS NOT NULL
+     AND fab_id IS NOT NULL
+     AND quantity_produced IS NOT NULL;
+
+
+-- =========================================================
+-- 2. Data Cleaning: Remove records violating business rules 
+(invalid production and yield values)
+-- =========================================================
+
+/* Apply domain rules to ensure production 
+values are physically realistic (no negative output, yield within 0–100%) */
+
+SELECT
+      *
+FROM
+    production
+WHERE
+    quantity_produced >= 0
+    AND yield_pct BETWEEN 0 AND 100;
+
+
+-- =========================================================
+-- 3. Remove duplicate production rows using ROW_NUMBER
+-- =========================================================
+
+WITH dedup AS
+(
+     SELECT *,
+              ROW_NUMBER () OVER (
+              PARTITION BY product_id, fab_id, quantity_produced, yield_pct
+              ORDER BY product_id
+              ) AS rn
+     FROM production
+)
+SELECT
+      *
+FROM
+     dedup
+WHERE rn = 1;
+
+
+-- =========================================================================
+-- 4. Replace NULL numeric values with 0 for safe aggregation
+-- =========================================================================
+
+SELECT
+      product_id,
+      fab_id,
+      ISNULL(quantity_produced,0) AS quantity_produced,
+      ISNULL(yield_pct,0) AS yield_pct
+FROM
+    production;
+
+-- ============================================================================
+-- 5. Keep only production records with valid product references
+-- ============================================================================
+
+SELECT
+      pr.*
+FROM
+      production pr
+INNER JOIN
+      products p
+      ON pr.product_id = p.product_id;
+
+-- ============================================================================
+-- 6. Remove orders with invalid dates or quantities
+-- ============================================================================
+
+SELECT
+      *
+FROM
+      orders
+WHERE 
+     quantity_ordered > 0
+     AND order_date IS NOT NULL
+     AND due_date IS NOT NULL
+     AND order_date <= due_date;
+
+-- ============================================================================
+-- 7. Standardize product type formatting
+-- ============================================================================
+
+SELECT
+      product_id,
+      UPPER(LTRIM(RTRIM(product_type))) AS product_type_cleaned
+FROM
+      products;
+
+-- ============================================================================
+-- 8. Remove invalid inventory levels
+-- ============================================================================
+
+SELECT
+      *
+FROM
+      inventory
+WHERE
+      stock_level >= 0
+      AND safety_stock >= 0;
+
+-- ============================================================================
+-- 9. Filter invalid capacity utilization values
+-- ============================================================================
+
+SELECT
+      *
+FROM
+      production
+WHERE
+      capacity_utilization_pct BETWEEN 0 AND 100;
+
+
+-- ============================================================================
+-- 10. Final consolidated cleaned production dataset
+-- ============================================================================
+
+SELECT
+      pr.product_id,
+      pr.fab_id,
+      pr.quantity_produced,
+      pr.yield_pct,
+      p.product_type
+FROM
+      production pr
+INNER JOIN
+      products p
+      ON pr.product_id = p.product_id
+WHERE pr.quantity_produced >= 0
+      AND pr.yield_pct BETWEEN 0 AND 100;
