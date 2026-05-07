@@ -14,6 +14,8 @@ Based on these insights, targeted recommendations are proposed to address manufa
 
 3) Enhance Fulfillment KPI performance by implementing demand-driven production planning, optimizing fab capacity utilization, and strengthening supply chain coordination to consistently meet customer demand and reduce delivery shortfalls.
 
-4) 
+4) Deploy dynamic safety stock and replenishment optimization for products with negative buffer gaps by aligning inventory thresholds with real-time demand variability, lead times, and supply constraints to reduce stockout risk and improve inventory health.
+
+5) 
    
    
