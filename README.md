@@ -12,4 +12,8 @@ Based on these insights, targeted recommendations are proposed to address manufa
 
 2) Improve production planning accuracy by refining forecasting models and incorporating historical execution variance, enabling better alignment between planned output and actual production to reduce over-execution and under-execution across fabs.
 
-3) 
+3) Enhance Fulfillment KPI performance by implementing demand-driven production planning, optimizing fab capacity utilization, and strengthening supply chain coordination to consistently meet customer demand and reduce delivery shortfalls.
+
+4) 
+   
+   
