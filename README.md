@@ -1,2 +1,3 @@
-# Supply-Chain-Analysis
-Analyzing end-to-end supply chain of a manufacturing company
+# Executive Summary:
+
+This project analyzes the supply chain process of a manufacturing company in a semiconductor industry. 
