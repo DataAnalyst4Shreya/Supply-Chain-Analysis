@@ -1,0 +1,87 @@
+-- =========================================
+-- Utilization Rate & Execution Efficiency
+-- =========================================
+
+-- ===========================================================
+-- 1. Calculation Utilization Percentage & Execution Efficiency
+-- ===========================================================
+
+WITH cp_agg AS (
+    SELECT 
+        fab_id,
+        SUM(planned_capacity) AS total_planned_capacity,
+        SUM(actual_output) AS total_planned_output
+    FROM capacity_plan
+    GROUP BY fab_id
+),
+prod_agg AS (
+    SELECT 
+        fab_id,
+        SUM(quantity_produced) AS total_actual_production,
+        AVG(capacity_utilization_pct) AS avg_utilization,
+        AVG(yield_pct) AS avg_yield
+    FROM production
+    GROUP BY fab_id
+)
+
+SELECT 
+    f.fab_id,
+    f.fab_name,
+    f.fab_type,
+    f.location,
+
+    cpa.total_planned_capacity,
+    cpa.total_planned_output,
+    pa.total_actual_production,
+
+    CASE 
+        WHEN cpa.total_planned_capacity = 0 THEN NULL
+        ELSE pa.total_actual_production * 1.0 / cpa.total_planned_capacity
+    END AS utilization_percentage,
+
+    CASE 
+        WHEN cpa.total_planned_output = 0 THEN NULL
+        ELSE pa.total_actual_production * 1.0 / cpa.total_planned_output
+    END AS execution_efficiency,
+
+    pa.avg_utilization,
+    pa.avg_yield
+
+FROM fabs f
+LEFT JOIN cp_agg cpa ON f.fab_id = cpa.fab_id
+LEFT JOIN prod_agg pa ON f.fab_id = pa.fab_id
+ORDER BY utilization_percentage DESC;
+
+
+-- =============================================================
+-- 2. KPI: Daily Execution Efficiency
+-- =============================================================
+
+/*******************************************************************************
+Description: Measures the ratio of Quantity Produced vs. Actual Planned Output.
+Technical Note: 
+  - Calculates efficiency per (Fab + Product + Date) grain.
+  - Uses LEFT JOIN to include planned days where production was zero/missing.
+  - Row-level calculation (no SUM) to preserve daily granularity.
+  - Handles Division-by-Zero via CASE statement.
+  - Multiplying by 1.0 ensures decimal precision in the result.
+*******************************************************************************/
+
+SELECT
+      cp.fab_id,
+      cp.product_id,
+      cp.plan_date,
+
+      CASE
+          WHEN cp.actual_output = 0 THEN NULL
+          ELSE p.quantity_produced * 1.0 / cp.actual_output
+          END AS execution_efficiency
+FROM
+      capacity_plan cp
+
+LEFT JOIN
+      production p
+      ON cp.fab_id = p.fab_id
+      AND cp.product_id = p.product_id
+      AND cp.plan_date = p.production_date;
+
