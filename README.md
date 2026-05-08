@@ -33,21 +33,24 @@ For this semiconductor company, optimizing manufacturing and supply chain operat
 
 The objective of this analysis is to identify gaps and shortfalls across the supply chain and manufacturing operations, and to uncover the underlying drivers by examining key stages of the end-to-end process. This includes improving demand forecasting accuracy, strengthening alignment between supply and actual demand, and identifying bottlenecks across manufacturing nodes. The analysis also focuses on enhancing inventory health through better buffer management, improving fulfillment rate stability, and optimizing capacity utilization across production stages and technology nodes. In addition, it aims to reduce operational inefficiencies, improve yield performance, and enhance overall decision-making speed through more reliable operational visibility. The insights generated will support targeted, data-driven improvements across manufacturing and supply chain functions, ultimately reducing costs and maximizing profitability.
 
+<img width="1280" height="720" alt="data_model_diagram" src="https://github.com/user-attachments/assets/5829f80a-e607-4918-bc84-e93b24f8d984" />
 
+
+<img width="1280" height="720" alt="relationship_summary" src="https://github.com/user-attachments/assets/da320a1e-24be-4a34-8068-3e0af3bbebf7" />
 
 
 # Methodology:
 
-Developed SQL queries to extract, clean, and transform raw subscription data, enabling structured analysis of the payment funnel.
+Developed SQL queries to extract, clean, and transform raw supply chain datasets, enabling structured analysis of the supply chain operations.
 
-Built a funnel tracking dashboard in Hex to visualize subscription counts across payment stages.
+Built differnt types of visualizations like line chart, matrix, clustered bar chart, KPI Card, Clustered Column Chart, and Table in Power BI to visualize various supply chain metrics.
 
-Mapped the end-to-end subscription payment funnel using Lucidchart to define user flow and key conversion stages.
+Created semiconductor supply chain - entity relationship diagram using Claude and PowerPoint Tools.
 
 
 ## Exploratory Data Analysis (EDA)
 
-Conducted initial data exploration using SQL to understand the structure and quality of the subscription dataset. This included checking for missing values, duplicates, and inconsistencies in the subscription dataset. Queried subscription IDs across both successful (‘happy path’) and failed (‘error path’) journeys to reconstruct end-to-end user flows and understand payment behavior. Performed high-level analysis to uncover initial trends and establish a baseline understanding of user engagement and payment performance.
+Conducted initial data exploration using SQL to understand the structure and quality of the supply chain dataset. This included checking for missing values, duplicates, and inconsistencies in the subscription dataset. Queried subscription IDs across both successful (‘happy path’) and failed (‘error path’) journeys to reconstruct end-to-end user flows and understand payment behavior. Performed high-level analysis to uncover initial trends and establish a baseline understanding of user engagement and payment performance.
 
 ## Product Funnel Analysis
 
