@@ -48,7 +48,7 @@ Built differnt types of visualizations like line chart, matrix, clustered bar ch
 Created semiconductor supply chain - entity relationship diagram using Claude and PowerPoint Tools.
 
 
-## Exploratory Data Analysis (EDA)
+## Data Profiling
 
 Conducted initial data exploration using SQL to understand the structure and quality of the supply chain dataset. This included checking for missing values, duplicates, and inconsistencies in the subscription dataset. Queried subscription IDs across both successful (‘happy path’) and failed (‘error path’) journeys to reconstruct end-to-end user flows and understand payment behavior. Performed high-level analysis to uncover initial trends and establish a baseline understanding of user engagement and payment performance.
 
