@@ -28,4 +28,12 @@ Based on these insights, targeted recommendations are proposed to address manufa
 
 
 # Business Problem:
+
+For this semiconductor company, optimizing manufacturing and supply chain operations is essential to achieving operational efficiency and maximizing profitability. However, persistent constraints across both manufacturing and supply chain functions are creating structural bottlenecks, leading to negative demand–supply gaps, which in turn are adversely impacting yield performance and increasing overall operational costs. This issue has been identified by the Supply Chain Planning and Operations team, who have engaged the Data Analytics team to analyze the root drivers and develop actionable recommendations to resolve these challenges.
+
+The objective of this analysis is to identify gaps and shortfalls across the supply chain and manufacturing operations, and to uncover the underlying drivers by examining key stages of the end-to-end process. This includes improving demand forecasting accuracy, strengthening alignment between supply and actual demand, and identifying bottlenecks across manufacturing nodes. The analysis also focuses on enhancing inventory health through better buffer management, improving fulfillment rate stability, and optimizing capacity utilization across production stages and technology nodes. In addition, it aims to reduce operational inefficiencies, improve yield performance, and enhance overall decision-making speed through more reliable operational visibility. The insights generated will support targeted, data-driven improvements across manufacturing and supply chain functions, ultimately reducing costs and maximizing profitability.
+
+
+
+
    
