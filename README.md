@@ -22,6 +22,10 @@ Based on these insights, targeted recommendations are proposed to address manufa
 
 7) Prioritize yield optimization initiatives alongside capacity management to convert existing high utilization levels into greater usable output, focusing on defect pattern identification, defect reduction, and real-time process controls to unlock hidden manufacturing capacity and reduce supply chain pressure.
 
-8) 
-   
+8) Rebalance capacity allocation across technology nodes by aligning supply planning with real-time demand signals and end-market adoption trends to reduce structural over-supply in technology nodes (7nm, 10nm and 14nm) and improve overall asset utilization.
+
+9) Address the persistent negative demand-supply gap (over-supply condition) by realigning production plans with actual demand signals, scaling down output for consistently negative-gap products, and shifting capacity toward higher-demand areas to reduce inventory accumulation, safeguard margins, and improve overall operational efficiency.
+
+
+# Business Problem:
    
