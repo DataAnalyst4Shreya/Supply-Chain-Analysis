@@ -34,6 +34,43 @@ For this semiconductor company, optimizing manufacturing and supply chain operat
 The objective of this analysis is to identify gaps and shortfalls across the supply chain and manufacturing operations, and to uncover the underlying drivers by examining key stages of the end-to-end process. This includes improving demand forecasting accuracy, strengthening alignment between supply and actual demand, and identifying bottlenecks across manufacturing nodes. The analysis also focuses on enhancing inventory health through better buffer management, improving fulfillment rate stability, and optimizing capacity utilization across production stages and technology nodes. In addition, it aims to reduce operational inefficiencies, improve yield performance, and enhance overall decision-making speed through more reliable operational visibility. The insights generated will support targeted, data-driven improvements across manufacturing and supply chain functions, ultimately reducing costs and maximizing profitability.
 
 
+# Methodology:
 
+Developed SQL queries to extract, clean, and transform raw subscription data, enabling structured analysis of the payment funnel.
+
+Built a funnel tracking dashboard in Hex to visualize subscription counts across payment stages.
+
+Mapped the end-to-end subscription payment funnel using Lucidchart to define user flow and key conversion stages.
+
+
+## Exploratory Data Analysis (EDA)
+
+Conducted initial data exploration using SQL to understand the structure and quality of the subscription dataset. This included checking for missing values, duplicates, and inconsistencies in the subscription dataset. Queried subscription IDs across both successful (‘happy path’) and failed (‘error path’) journeys to reconstruct end-to-end user flows and understand payment behavior. Performed high-level analysis to uncover initial trends and establish a baseline understanding of user engagement and payment performance.
+
+## Product Funnel Analysis
+
+Defined the key stages of the payment funnel, from checkout initiation to successful subscription payment. Used SQL techniques, including Common Table Expressions (CTEs) and aggregate functions, to calculate conversion rates at each stage. CASE statements were applied to categorize users based on their progress through the funnel. Drop-off rates were measured to identify critical friction points, and further segmentation was performed to analyze root causes such as payment errors and user behavior. Computed conversion rates and workflow conversion rates to develop a comprehensive understanding of user flow and payment performance across the funnel.
+
+## Data Visualization
+
+Developed visualizations to effectively communicate insights and highlight key findings. Bar charts were used to compare subscriptions with and without payment errors, while funnel visualizations illustrated conversion rates across each stage of the payment process. Built line charts to analyze trends in subscription flow across funnel stages over time, identifying patterns in user progression and drop-off behavior. Dashboards were created in Hex Data Science Notebook to present insights in a clear, actionable format for business stakeholders.
+
+
+# Skills & Tools Used:
+
+**SQL:** CTEs, JOINs, CASE statements, aggregate functions, and subqueries for data extraction, transformation, and funnel analysis
+
+**Data Wrangling & Cleaning:** Processed raw subscription data by handling missing values, duplicates, and inconsistencies to ensure data quality
+
+**Data Modeling:** Designed data flow and structured subscription funnel stages using Lucidchart
+
+**Data Visualization:** Built bar and line charts to analyze trends, funnel progression, and user behavior patterns
+
+**Data Analysis Notebook:** Performed exploratory analysis and dashboarding using Hex
+
+**Data Warehouse:** Queried and analyzed structured datasets stored in Snowflake
+
+
+# Results & Business Recommendation:
 
    
