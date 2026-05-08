@@ -33,6 +33,8 @@ For this semiconductor company, optimizing manufacturing and supply chain operat
 
 The objective of this analysis is to identify gaps and shortfalls across the supply chain and manufacturing operations, and to uncover the underlying drivers by examining key stages of the end-to-end process. This includes improving demand forecasting accuracy, strengthening alignment between supply and actual demand, and identifying bottlenecks across manufacturing nodes. The analysis also focuses on enhancing inventory health through better buffer management, improving fulfillment rate stability, and optimizing capacity utilization across production stages and technology nodes. In addition, it aims to reduce operational inefficiencies, improve yield performance, and enhance overall decision-making speed through more reliable operational visibility. The insights generated will support targeted, data-driven improvements across manufacturing and supply chain functions, ultimately reducing costs and maximizing profitability.
 
+<img width="1280" height="720" alt="data_model_diagram" src="https://github.com/user-attachments/assets/a1df4a3b-8b7b-4c5b-86ac-0cac82a69267" />
+
 
 # Methodology:
 
