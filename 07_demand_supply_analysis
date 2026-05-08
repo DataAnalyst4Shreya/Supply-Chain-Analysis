@@ -1,0 +1,123 @@
+-- =====================================
+-- Demand & Supply Analysis
+-- =====================================
+
+-- ======================================
+-- 1. Scalable Demand-Supply Gap Aanalysis
+-- ======================================
+
+  /* 
+   Calculates the inventory gap by technology node. 
+   
+   TECH NOTE: Uses CTEs to aggregate orders and production independently before joining. 
+   This prevents "Fan-out"—a common bug where joining multiple one-to-many tables 
+   results in inflated, incorrect sums.
+*/
+
+WITH cte_orders AS
+ 
+( -- Aggregate orders per product first to prevent row multiplication
+SELECT
+      product_id,
+      SUM(quantity_ordered) AS total_demand
+FROM
+      orders
+GROUP BY
+      product_id
+),
+cte_production AS
+(  -- Aggregate production per product first
+SELECT
+      product_id,
+      SUM(quantity_produced) AS total_supply
+FROM
+      production
+GROUP BY
+      product_id
+)
+
+SELECT
+      pr.technology_node,
+      SUM(ISNULL(cteo.total_demand, 0)) AS demand,
+      SUM(ISNULL(ctep.total_supply, 0)) AS supply,
+      SUM(ISNULL(cteo.total_demand, 0)) - SUM(ISNULL(ctep.total_supply, 0)) AS gap
+FROM
+      products pr
+LEFT JOIN
+      cte_orders cteo
+      ON pr.product_id = cteo.product_id
+LEFT JOIN
+      cte_production ctep
+      ON pr.product_id = ctep.product_id
+GROUP BY
+      pr.technology_node
+ORDER BY
+      gap DESC;
+
+
+-- ==============================================
+-- 2. Supply Chain Optimization & Data Integrity
+-- ==============================================
+
+/* 
+-- OBJECTIVE: Calculate accurate demand-supply gaps while preventing Join Fan-out.
+-- OPTIMIZATION: 
+-- Utilized CTEs (Common Table Expressions) to aggregate Sales, Production, 
+   and Inventory metrics independently.
+-- Prevented Cartesian product Row-multiplication (Fan-out) that occurs 
+   when joining multiple 1:N tables.
+-- Improved calculation precision using CAST for floating-point averages.
+-- Used LEFT JOINs to ensure visibility into products with zero activity.
+*/
+
+WITH order_totals AS
+(
+SELECT
+      product_id,
+      SUM(quantity_ordered) AS total_demand
+FROM
+      orders
+GROUP BY
+      product_id
+),
+production_totals AS
+(
+SELECT
+      product_id,
+      SUM(quantity_produced) AS total_supply
+FROM
+      production
+GROUP BY
+      product_id
+),
+inventory_stats AS
+(
+SELECT
+      product_id,
+      AVG(CAST(stock_level AS FLOAT)) AS avg_inventory_fl
+FROM
+      inventory
+GROUP BY
+      product_id
+)
+SELECT
+      pr.product_id,
+      pr.product_name,
+      ISNULL(ort.total_demand, 0) AS demand,
+      ISNULL(pt.total_supply, 0) AS supply,
+      ISNULL(ins.avg_inventory_fl, 0) AS avg_inventory,
+      ISNULL(ort.total_demand, 0) - ISNULL(pt.total_supply, 0) AS demand_gap
+FROM
+      products pr
+LEFT JOIN
+      order_totals ort
+      ON pr.product_id = ort.product_id
+LEFT JOIN
+      production_totals pt
+      ON pr.product_id = pt.product_id
+LEFT JOIN
+      inventory_stats ins
+      ON pr.product_id = ins.product_id
+ORDER BY
+      demand_gap DESC;
+
