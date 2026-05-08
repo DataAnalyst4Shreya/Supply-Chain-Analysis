@@ -1,8 +1,12 @@
+-- =====================================
+-- Production Efficiency
+-- =====================================
 
-
+- =====================================
+-- 1. Production Efficiency Report
+-- =====================================
 
 /*
-  PRODUCTION EFFICIENCY REPORT
   - Purpose: Evaluate product-level yield efficiency and calculate volume losses.
   - Metrics: Average Yield, Total Output, Estimated Lost Volume.
   - Use Case: Identify low-performing products for quality control review.
@@ -20,13 +24,16 @@ GROUP BY
       product_id;
 
 
+- =======================================================================
+-- 2. Identify top-performing fabrication sites by summarizing efficiency
+-- =======================================================================
+
 /*
-  PRODUCTION EFFICIENCY ANALYSIS
-  Objective: Identify top-performing fabrication sites by summarizing efficiency, 
   total output, and quality (yield) on a per-factory basis.
   Metrics: Avg Utilization (%), Total Output (Units), Avg Yield (%)
   Sorting: Highest Utilization first.
 */
+
 
 SELECT
       fab_id, -- 1. Identify factory
