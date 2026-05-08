@@ -1,0 +1,42 @@
+
+
+
+/*
+  PRODUCTION EFFICIENCY REPORT
+  - Purpose: Evaluate product-level yield efficiency and calculate volume losses.
+  - Metrics: Average Yield, Total Output, Estimated Lost Volume.
+  - Use Case: Identify low-performing products for quality control review.
+*/
+
+SELECT
+      product_id,
+      AVG(yield_pct) AS avg_yield_pct,
+      SUM(quantity_produced) AS total_output,
+      -- Estimated Loss = Total Produced * (1 - Avg Yield %)
+      SUM(quantity_produced) * (1 - AVG(yield_pct)) AS estimated_loss
+FROM
+      production
+GROUP BY
+      product_id;
+
+
+/*
+  PRODUCTION EFFICIENCY ANALYSIS
+  Objective: Identify top-performing fabrication sites by summarizing efficiency, 
+  total output, and quality (yield) on a per-factory basis.
+  Metrics: Avg Utilization (%), Total Output (Units), Avg Yield (%)
+  Sorting: Highest Utilization first.
+*/
+
+SELECT
+      fab_id, -- 1. Identify factory
+      AVG(capacity_utilization_pct) AS avg_utilization,-- 2. Avg % of capacity used
+      SUM(quantity_produced) AS total_output,-- 3. Total units produced
+      AVG(yield_pct) AS avg_yield -- 4. Avg % of good products
+FROM
+      production -- 5. Data source table
+GROUP BY
+       fab_id -- 6. Group by factory
+ORDER BY
+      avg_utilization DESC; -- 7. Sort by highest efficiency
+
