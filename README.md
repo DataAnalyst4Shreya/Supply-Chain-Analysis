@@ -88,4 +88,14 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 
 # Results & Business Recommendation:
 
+**1. Planning Accuracy Trend Over Time (2025):**
+
+xychart-beta
+    title "Planning Accuracy Trend Over Time (2025)"
+    x-axis ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
+    y-axis "Execution Efficiency (%)" 100 --> 400
+    line [184, 350, 141, 337, 130, 351]
+    line [250, 200, 349, 150, 320, 155]
+
+
    
