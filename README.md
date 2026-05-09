@@ -92,16 +92,41 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 
 <img width="387" height="199" alt="image" src="https://github.com/user-attachments/assets/dbc487db-205b-4486-8401-6e568ca150f8" />
 
-- This visualization shows how execution efficiency or planning accuracy moves over time in 2025.
-  
-- The line chart shows a lot of fluctuations over the months and days in 2025 which is not a good sign.
+- This visualization tracks execution efficiency against plan over time in 2025, highlighting how closely actual performance aligns with planned expectations.
 
-- Execution Efficiency is over 100% for the months Feb 2025 - June 2025, indicating potential over-execution vs plan.
+- The line chart shows high volatility across months and days, indicating inconsistent execution performance, which is a concern from a planning and operational stability perspective.
 
-- Frequent spikes and dips in the chart suggest our forecasting model is not aligned with actual output.
+- Execution efficiency exceeds 100% from February 2025 to June 2025, suggesting sustained over-execution relative to plan, which may point to under-forecasting or reactive production adjustments.
+
+- The frequent spikes and dips indicate instability in planning accuracy and suggest that the forecasting model is not reliably capturing real-world production dynamics or demand variability.
 
 
 **2. Fab Utilization By Plan (%):** 
 
-<img width="333" height="217" alt="image" src="https://github.com/user-attachments/assets/3a463869-84db-4ce6-b4df-e11c0ed7fb79" />
+<img width="326" height="209" alt="Fab Utilization vs Plan" src="https://github.com/user-attachments/assets/314ec525-406f-484f-963d-542edf4ae156" />
+
+
+- The clustered bar chart compares actual utilization against planned capacity across different fabs, highlighting significant operational imbalances.
+  
+- Fabs 2, 5, and 6 are operating below 100% utilization vs plan, indicating underutilization of available capacity and potential inefficiencies in production allocation or demand fulfillment.
+
+- In contrast, Fabs 1, 3, 4, 7, and 8 are operating above 100% utilization, suggesting overloading beyond planned capacity, which may increase the risk of bottlenecks, quality issues, and equipment strain.
+
+- Overall, the analysis reveals a clear capacity misalignment across fabs, with some underutilized while others are overburdened, indicating the need for better production load balancing and capacity planning alignment.
+
+
+
+**3. Demand vs Fulfillment By Product:** 
+
+<img width="342" height="207" alt="Demand vs Product Fulfillment" src="https://github.com/user-attachments/assets/e9e39b1e-144c-4fee-a9e4-43cfb6c312eb" />
+
+- The visualization shows a clustered column chart representing demand vs fulfillment for each profuct.
+
+- We see that excepts for Product ID'S 18, 4, 9, 39, 34, the demand is greater than supply for all other products.
+
+
+
+
+
+
 
