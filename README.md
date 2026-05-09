@@ -60,28 +60,28 @@ Performed comprehensive data cleaning and validation using SQL to improve the re
 
 ## Analysis
 
-
+Utilized Common Table Expressions (CTEs), aggregate functions, and SQL calculations to independently measure manufacturing utilization rate and execution efficiency across semiconductor operations. Implemented CASE statements to handle NULL values and ensure accurate, error-free KPI calculations. Applied scalar value multiplication and type conversion techniques to generate precise decimal-based performance metrics. Additionally, leveraged LEFT JOIN operations while calculating daily efficiency to capture planned production days with zero or missing output, enabling more comprehensive operational performance analysis and gap identification. 
 
 ## Data Visualization
 
-
+Developed comprehensive supply chain and manufacturing visualizations to provide an end-to-end view of operational performance within the semiconductor company. Designed line charts to track planning accuracy trends over time and monitor inventory movement against safety stock levels. Utilized clustered column and bar charts to analyze fab utilization versus planned capacity, technology node demand-supply imbalances, and yield performance across products. Created KPI cards to highlight operational fulfillment performance and designed detailed tables to evaluate product-level buffer gaps and inventory risks. Additionally, built an end-to-end supply chain matrix to deliver deeper insights into critical operational metrics, including demand-supply gaps and buffer gaps across product categories.
 
 
 # Skills & Tools Used:
 
-**SQL:** CTEs, Window functions, JOINs, CASE statements, ISNULL functions, WHERE functions, FLOAT functions, and aggregate functions for data extraction, transformation, and analysis.
+**SQL:** Utilized CTEs, window functions, JOINs, CASE statements, ISNULL functions, WHERE clauses, aggregate functions, and decimal-based calculations to perform data extraction, transformation, cleaning, and advanced supply chain analysis.
 
-**Power BI:** Used Power BI to calculate DAX measures relevant for in-depth supply chain analysis. Created diverse kinds of visualizations in Power BI for data storytelling.
+**Power BI:** Developed DAX measures and interactive dashboards to perform in-depth semiconductor supply chain and manufacturing analysis, enabling KPI tracking, operational monitoring, and data-driven storytelling.
 
-**Data Wrangling & Cleaning:** Processed raw supply chain data data by handling missing values, duplicates, and inconsistencies to ensure data quality
+**Data Wrangling & Cleaning:** Cleaned and transformed raw supply chain data by handling missing values, duplicates, inconsistent records, and invalid business-rule entries to ensure data accuracy and analytical reliability.
 
-**Data Modeling:** Designed semiconductor supply chain - entity relationship model using Claude (LLM tool) through prompts. Further refined it in Power BI slides.
+**Data Modeling:** Designed and refined a semiconductor supply chain entity-relationship model (ERD) using AI-assisted prompt engineering with Claude, and further structured the data model within Power Point tool for reporting and analysis.
 
-**Data Visualization:** Developed interactive dashboards using matrice, table, KPI cards, bar charts, and line charts to analyze key aspects of semiconductor supply chain and manufacturing operations.
+**Data Visualization:** Built interactive visualizations including matrices, tables, KPI cards, clustered bar charts, clustered column charts, and line charts to analyze demand-supply alignment, inventory trends, fulfillment performance, yield metrics, and capacity utilization.
 
-**SQL Server Management Studio (SSMS) Version 2022:** Performed exploratory data analysis by running SQL queries in SQL Server Management Studio (SSMS) Version 2022.
+**SQL Server Management Studio (SSMS) Version 2022:** Performed exploratory data analysis, query optimization, and supply chain KPI analysis using SQL Server Management Studio (SSMS) Version 2022.
 
-**Data Source:** Leveraged ChatGPT free version to create synthetic supply chain dataset by writing specific prompts.
+**Data Source:** Leveraged AI-assisted prompt engineering using ChatGPT to generate a synthetic semiconductor supply chain dataset for analytical modeling, visualization, and business problem-solving.
 
 **Data Type:** Synthetic Dataset.
 
