@@ -1,0 +1,223 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 480" width="860" height="480">
+  <defs>
+    <style>
+      @keyframes drawLine {
+        from { stroke-dashoffset: 4000; }
+        to   { stroke-dashoffset: 0; }
+      }
+      @keyframes drawMA {
+        from { stroke-dashoffset: 4000; }
+        to   { stroke-dashoffset: 0; }
+      }
+      @keyframes fillFade {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+      }
+      @keyframes dotPulse {
+        0%, 100% { r: 3.5; opacity: 0.9; }
+        50%      { r: 5.5; opacity: 1; }
+      }
+      .chart-line {
+        stroke-dasharray: 4000;
+        stroke-dashoffset: 4000;
+        animation: drawLine 3.8s cubic-bezier(0.4,0,0.2,1) 0.4s forwards;
+      }
+      .ma-line {
+        stroke-dasharray: 8 5;
+        stroke-dashoffset: 4000;
+        animation: drawMA 3.8s cubic-bezier(0.4,0,0.2,1) 0.8s forwards;
+      }
+      .area-fill {
+        opacity: 0;
+        animation: fillFade 1.2s ease-out 3.8s forwards;
+      }
+      .ui-fade {
+        opacity: 0;
+        animation: fadeIn 0.7s ease-out 0.1s forwards;
+      }
+      .late-fade {
+        opacity: 0;
+        animation: fadeIn 0.8s ease-out 4.1s forwards;
+      }
+      .pulse {
+        animation: dotPulse 2s ease-in-out 4.3s infinite;
+      }
+    </style>
+
+    <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#38bdf8" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.0"/>
+    </linearGradient>
+
+    <linearGradient id="topBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+
+    <clipPath id="chartClip">
+      <rect x="90" y="28" width="720" height="310"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="480" fill="#0b1120" rx="14"/>
+  <rect x="1" y="1" width="858" height="478" fill="none" stroke="#1e2d40" stroke-width="1" rx="14"/>
+  <rect x="0" y="0" width="860" height="3" rx="2" fill="url(#topBar)"/>
+
+  <!-- ── TITLE BLOCK ── clearly visible, larger fonts -->
+  <text x="90" y="22" font-family="monospace" font-size="10" fill="#38bdf8" letter-spacing="2.5" class="ui-fade">PLANNING ACCURACY</text>
+  <text x="90" y="46" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="#f1f5f9" class="ui-fade">Execution Efficiency Trend Over Time</text>
+
+  <!-- ── GRID LINES ── -->
+  <g stroke="#162030" stroke-width="0.7" class="ui-fade">
+    <line x1="90" y1="68"  x2="810" y2="68"/>
+    <line x1="90" y1="120" x2="810" y2="120"/>
+    <line x1="90" y1="172" x2="810" y2="172"/>
+    <line x1="90" y1="224" x2="810" y2="224"/>
+    <line x1="90" y1="276" x2="810" y2="276"/>
+    <line x1="90" y1="338" x2="810" y2="338"/>
+  </g>
+
+  <!-- Vertical month dividers -->
+  <g stroke="#162030" stroke-width="0.5" stroke-dasharray="3 5" class="ui-fade">
+    <line x1="234" y1="68" x2="234" y2="338"/>
+    <line x1="378" y1="68" x2="378" y2="338"/>
+    <line x1="522" y1="68" x2="522" y2="338"/>
+    <line x1="666" y1="68" x2="666" y2="338"/>
+  </g>
+
+  <!-- ── Y-AXIS LABEL (rotated, bright) ── -->
+  <text font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#94a3b8" text-anchor="middle"
+        transform="translate(20,200) rotate(-90)" class="ui-fade">Execution Efficiency (%)</text>
+
+  <!-- ── Y-AXIS TICK LABELS ── brighter, larger -->
+  <g font-family="monospace" font-size="12" fill="#94a3b8" text-anchor="end" class="ui-fade">
+    <text x="82" y="72">350</text>
+    <text x="82" y="124">280</text>
+    <text x="82" y="176">210</text>
+    <text x="82" y="228">140</text>
+    <text x="82" y="280">100</text>
+  </g>
+
+  <!-- ── X-AXIS MONTH LABELS ── brighter, larger -->
+  <g font-family="monospace" font-size="12" fill="#94a3b8" text-anchor="middle" class="ui-fade">
+    <text x="90"  y="360">Feb</text>
+    <text x="234" y="360">Mar</text>
+    <text x="378" y="360">Apr</text>
+    <text x="522" y="360">May</text>
+    <text x="666" y="360">Jun</text>
+    <text x="810" y="360">Jul</text>
+  </g>
+
+  <!-- ── X-AXIS YEAR LABELS ── clearly visible below month -->
+  <g font-family="monospace" font-size="11" fill="#64748b" text-anchor="middle" class="ui-fade">
+    <text x="90"  y="376">2025</text>
+    <text x="234" y="376">2025</text>
+    <text x="378" y="376">2025</text>
+    <text x="522" y="376">2025</text>
+    <text x="666" y="376">2025</text>
+    <text x="810" y="376">2025</text>
+  </g>
+
+  <!-- ── X-AXIS TITLE ── -->
+  <text x="450" y="402" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#94a3b8" text-anchor="middle" class="ui-fade">Plan Date</text>
+
+  <!-- ── AXES ── -->
+  <line x1="90" y1="28"  x2="90"  y2="338" stroke="#2e4060" stroke-width="1.2" class="ui-fade"/>
+  <line x1="90" y1="338" x2="810" y2="338" stroke="#2e4060" stroke-width="1.2" class="ui-fade"/>
+
+  <!-- ── AREA FILL ── -->
+  <g clip-path="url(#chartClip)">
+    <polygon class="area-fill" fill="url(#areaGrad)" stroke="none"
+      points="
+        90,338
+        90,205 105,158 120,180 135,185 150,230
+        165,270 180,190 195,180 210,225 225,295
+        240,205 255,152 270,220 285,180 300,305
+        315,200 330,230 345,245 360,295 375,175
+        390,152 405,205 420,180 435,220 450,245
+        465,265 480,190 495,150 510,210 525,285
+        540,190 555,225 570,245 585,180 600,170
+        615,225 630,255 645,220 660,190 675,180
+        690,225 705,265 720,295 735,155 750,200
+        765,175 780,255 795,200 810,235
+        810,338
+      "/>
+  </g>
+
+  <!-- ── MAIN EFFICIENCY LINE ── -->
+  <polyline class="chart-line"
+    fill="none" stroke="#38bdf8" stroke-width="2"
+    stroke-linejoin="round" stroke-linecap="round"
+    clip-path="url(#chartClip)"
+    points="
+      90,205 105,158 120,180 135,185 150,230
+      165,270 180,190 195,180 210,225 225,295
+      240,205 255,152 270,220 285,180 300,305
+      315,200 330,230 345,245 360,295 375,175
+      390,152 405,205 420,180 435,220 450,245
+      465,265 480,190 495,150 510,210 525,285
+      540,190 555,225 570,245 585,180 600,170
+      615,225 630,255 645,220 660,190 675,180
+      690,225 705,265 720,295 735,155 750,200
+      765,175 780,255 795,200 810,235"/>
+
+  <!-- ── 7-DAY MOVING AVERAGE LINE (pink dashed) ── -->
+  <polyline class="ma-line"
+    fill="none" stroke="#f472b6" stroke-width="2"
+    stroke-linejoin="round" stroke-linecap="round"
+    clip-path="url(#chartClip)"
+    points="
+      90,218 120,210 150,205 180,202 210,208
+      240,210 270,208 300,212 330,215 360,210
+      390,205 420,202 450,200 480,198 510,202
+      540,205 570,208 600,205 630,208 660,205
+      690,210 720,215 750,210 780,208 810,210"/>
+
+  <!-- ── PEAK ANNOTATION ── -->
+  <g class="late-fade">
+    <line x1="390" y1="138" x2="390" y2="148" stroke="#f87171" stroke-width="1" stroke-dasharray="2 2"/>
+    <circle cx="390" cy="152" r="4.5" fill="#0b1120" stroke="#f87171" stroke-width="1.5"/>
+    <rect x="346" y="114" width="88" height="22" rx="5" fill="#111827"/>
+    <text x="390" y="129" font-family="monospace" font-size="11" fill="#f87171" text-anchor="middle">↑ peak 341%</text>
+  </g>
+
+  <!-- ── FLOOR ANNOTATION ── -->
+  <g class="late-fade">
+    <line x1="495" y1="164" x2="495" y2="152" stroke="#34d399" stroke-width="1" stroke-dasharray="2 2"/>
+    <circle cx="495" cy="150" r="4.5" fill="#0b1120" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="451" y="126" width="88" height="22" rx="5" fill="#111827"/>
+    <text x="495" y="141" font-family="monospace" font-size="11" fill="#34d399" text-anchor="middle">↓ low 139%</text>
+  </g>
+
+  <!-- ── PULSE DOT at last point ── -->
+  <circle cx="810" cy="235" r="3.5" fill="#38bdf8" class="pulse"/>
+
+  <!-- ── STAT CHIPS ── -->
+  <g class="late-fade">
+    <rect x="90"  y="420" width="90" height="22" rx="5" fill="#0f1e35"/>
+    <text x="135" y="435" font-family="monospace" font-size="11" fill="#f87171" text-anchor="middle">↑ Peak  341%</text>
+
+    <rect x="188" y="420" width="90" height="22" rx="5" fill="#0f1e35"/>
+    <text x="233" y="435" font-family="monospace" font-size="11" fill="#34d399" text-anchor="middle">↓ Floor  139%</text>
+
+    <rect x="286" y="420" width="90" height="22" rx="5" fill="#0f1e35"/>
+    <text x="331" y="435" font-family="monospace" font-size="11" fill="#38bdf8" text-anchor="middle">~  Avg  228%</text>
+  </g>
+
+  <!-- ── LEGEND ── neat, spaced, two items -->
+  <g class="ui-fade">
+    <!-- Efficiency -->
+    <rect x="580" y="423" width="12" height="12" rx="3" fill="#38bdf8"/>
+    <text x="598" y="434" font-family="monospace" font-size="12" fill="#94a3b8">Efficiency</text>
+
+    <!-- 7-Day MA -->
+    <line x1="700" y1="429" x2="722" y2="429" stroke="#f472b6" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="728" y="434" font-family="monospace" font-size="12" fill="#94a3b8">7-Day MA</text>
+  </g>
+
+</svg>
