@@ -101,4 +101,7 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 - Frequent spikes and dips in the chart suggest our forecasting model is not aligned with actual output.
 
 
-**2. 
+**2. Fab Utilization By Plan (%):** 
+
+<img width="333" height="217" alt="image" src="https://github.com/user-attachments/assets/3a463869-84db-4ce6-b4df-e11c0ed7fb79" />
+
