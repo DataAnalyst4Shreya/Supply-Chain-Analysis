@@ -35,8 +35,7 @@ The objective of this analysis is to identify gaps and shortfalls across the sup
 
 <img width="1280" height="720" alt="data_model_diagram" src="https://github.com/user-attachments/assets/5829f80a-e607-4918-bc84-e93b24f8d984" />
 
-
-<img width="1280" height="720" alt="relationship_summary" src="https://github.com/user-attachments/assets/da320a1e-24be-4a34-8068-3e0af3bbebf7" />
+<img width="1280" height="720" alt="data_model_diagram" src="https://github.com/user-attachments/assets/5bc990e2-8beb-482b-a687-3fd8e122c38a" />
 
 
 # Methodology:
@@ -130,9 +129,8 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 
 **4. End-to-end Supply Chain Performance Matrix:** 
 
-<img width="292" height="342" alt="end-to-end supply chain" src="https://github.com/user-attachments/assets/c79dbe2f-7bd0-4acb-8167-130ae165a214" />
+<img width="266" height="314" alt="supply chain overall" src="https://github.com/user-attachments/assets/841af285-6fe8-4d9e-9553-3106c57b0110" />
 
-<img width="264" height="27" alt="Buffer Gap" src="https://github.com/user-attachments/assets/f59be07e-f5c8-4aa5-8642-32a9512f9646" />
 
 - The matrix provides a comprehensive view of end-to-end supply chain performance by highlighting demand-supply gaps and inventory buffer gaps for each product.
   
