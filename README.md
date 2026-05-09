@@ -91,7 +91,7 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 
 <img width="387" height="199" alt="image" src="https://github.com/user-attachments/assets/dbc487db-205b-4486-8401-6e568ca150f8" />
 
-- This visualization tracks execution efficiency against plan over time in 2025, highlighting how closely actual performance aligns with planned expectations.
+- This visualization tracks execution efficiency against plan over time with respect to year 2025, highlighting how closely actual performance aligns with planned expectations.
 
 - The line chart shows high volatility across months and days, indicating inconsistent execution performance, which is a concern from a planning and operational stability perspective.
 
@@ -129,7 +129,7 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 
 **4. End-to-end Supply Chain Performance Matrix:** 
 
-<img width="266" height="314" alt="supply chain overall" src="https://github.com/user-attachments/assets/841af285-6fe8-4d9e-9553-3106c57b0110" />
+<img width="266" height="314" alt="supply chain overall" src="https://github.com/user-attachments/assets/2b5a743c-eee4-4f74-968f-6e1b2ea45519" />
 
 
 - The matrix provides a comprehensive view of end-to-end supply chain performance by highlighting demand-supply gaps and inventory buffer gaps for each product.
@@ -140,3 +140,49 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 
 - Overall, the analysis reveals a significant imbalance between demand, supply, and inventory positioning, reflecting weaknesses in supply chain synchronization that can negatively impact revenue, service levels, and business credibility.
 
+
+
+**Business Recommendations:**
+
+- Strengthen forecasting accuracy by leveraging historical trends, real-time demand signals, seasonality patterns, and market variables to improve planning precision and maintain execution efficiency closer to targeted levels.
+
+- Improve fab utilization balancing by dynamically reallocating production loads across fabs based on capacity availability, historical utilization trends, and changing demand conditions to reduce both underutilization and overloading risks.
+
+- Align production planning with real-time demand requirements to optimize manufacturing throughput, minimize fulfillment gaps, and improve overall supply chain responsiveness and revenue generation.
+
+- Maintain optimal safety stock levels across all products through continuous monitoring of inventory movement, demand variability, and lead times to reduce stockout risks and ensure uninterrupted order fulfillment.
+
+- Reduce excess inventory and carrying costs by implementing demand-driven inventory planning that accounts for supply chain constraints, lead-time fluctuations, and product-level consumption patterns.
+
+- Enhance operational decision-making through a data-driven supply chain framework that integrates forecasting, inventory, production, and fulfillment insights to improve efficiency, reduce waste, and maximize profitability.
+
+- Reduce dependency on external foundries by maximizing internal fab utilization through real-time KPI-driven production monitoring and dynamic capacity allocation across manufacturing facilities.
+
+- Implement a more agile manufacturing strategy that continuously adjusts production plans based on utilization trends, demand fluctuations, and operational performance to improve yield rates, enhance efficiency, and maximize profitability.
+
+- Develop a balanced sourcing strategy by diversifying external foundry partnerships to reduce supply chain risk and improve business continuity during demand surges or disruptions.
+
+- Implement predictive maintenance and downtime monitoring across fabs to reduce production interruptions and improve effective capacity utilization.
+
+
+#Next Steps:
+
+- Implement real-time KPI dashboards to continuously monitor utilization, execution efficiency, inventory health, and fulfillment performance across fabs and products.
+
+- Develop scenario-based capacity planning models to better respond to sudden demand fluctuations, supply disruptions, and changing market conditions.
+
+- Introduce predictive analytics and advanced forecasting models to improve demand planning accuracy and reduce execution variability.
+
+- Establish automated alert systems for stockout risks, excess inventory levels, and major demand-supply imbalances to enable faster corrective actions.
+
+- Improve collaboration between procurement, manufacturing, inventory, and logistics teams to strengthen end-to-end supply chain synchronization.
+
+- Prioritize production capacity for high-demand and high-margin products during periods of constrained manufacturing capacity.
+
+- Continuously evaluate product-level profitability, inventory movement, and utilization trends to support more strategic operational planning.
+
+- Enhance supply chain resilience by incorporating supplier risk analysis, lead-time variability tracking, and contingency planning mechanisms.
+
+- Perform ongoing root-cause analysis of utilization imbalances, fulfillment gaps, and execution inefficiencies to drive continuous process improvement.
+
+- Explore AI-driven optimization techniques for production scheduling, inventory planning, and demand forecasting to improve long-term operational efficiency and scalability.
