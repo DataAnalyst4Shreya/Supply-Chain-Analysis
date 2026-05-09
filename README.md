@@ -115,18 +115,30 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 - Overall, the analysis reveals a clear capacity misalignment across fabs, with some underutilized while others are overburdened, indicating the need for better production load balancing and capacity planning alignment.
 
 
-
 **3. Demand vs Fulfillment By Product:** 
 
 <img width="342" height="207" alt="Demand vs Product Fulfillment" src="https://github.com/user-attachments/assets/e9e39b1e-144c-4fee-a9e4-43cfb6c312eb" />
 
-- The visualization shows a clustered column chart representing demand vs fulfillment for each profuct.
+- The visualization presents a clustered column chart comparing demand versus fulfillment across different products, providing insights into how effectively production aligns with customer demand.
 
-- We see that excepts for Product ID'S 18, 4, 9, 39, 34, the demand is greater than supply for all other products.
+- For the majority of products, the company is successfully meeting demand with sufficient production output, reflecting strong overall manufacturing and supply chain performance.
+
+- However, for Product IDs 18, 4, 9, 39, and 34, demand exceeds fulfillment, indicating supply shortages and an inability to produce enough units to satisfy market demand.
+
+- The analysis highlights that although most products are adequately fulfilled, these five under-supplied product variants could still create notable supply chain pressure, potentially leading to missed sales opportunities, customer dissatisfaction, and revenue decline.
 
 
+**4. End-to-end Supply Chain Performance Matrix:** 
 
+<img width="292" height="342" alt="end-to-end supply chain" src="https://github.com/user-attachments/assets/c79dbe2f-7bd0-4acb-8167-130ae165a214" />
 
+<img width="264" height="27" alt="Buffer Gap" src="https://github.com/user-attachments/assets/f59be07e-f5c8-4aa5-8642-32a9512f9646" />
 
+- The matrix provides a comprehensive view of end-to-end supply chain performance by highlighting demand-supply gaps and inventory buffer gaps for each product.
+  
+- For the majority of products, demand exceeds supply, indicating production shortfalls and supply chain inefficiencies that may adversely affect operational performance and profitability.
 
+- Product IDs 16 and 7 show a negative buffer gap, meaning inventory levels have fallen below the defined safety stock threshold, creating a high risk of stockouts and potential revenue loss.
+
+- Overall, the analysis reveals a significant imbalance between demand, supply, and inventory positioning, reflecting weaknesses in supply chain synchronization that can negatively impact revenue, service levels, and business credibility.
 
