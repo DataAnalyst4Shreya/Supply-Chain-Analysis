@@ -48,11 +48,15 @@ Built differnt types of visualizations like line chart, matrix, clustered bar ch
 Created semiconductor supply chain - entity relationship diagram using Claude and PowerPoint Tools.
 
 
-## Data Profiling
+## Exploratory Data Analysis
 
-Conducted initial data exploration using SQL to understand the structure and quality of the supply chain dataset. This included checking for missing values, duplicates, and inconsistencies in the subscription dataset. Queried subscription IDs across both successful (‘happy path’) and failed (‘error path’) journeys to reconstruct end-to-end user flows and understand payment behavior. Performed high-level analysis to uncover initial trends and establish a baseline understanding of user engagement and payment performance.
+Conducted exploratory data analysis using SQL to evaluate the structure, consistency, and overall quality of the semiconductor supply chain dataset. This involved validating row counts across tables, examining column structures, and analyzing product mix through frequency distribution of product types. Additionally, queries were performed to assess manufacturing output ranges, throughput patterns, and product portfolio composition in order to understand category-wise distribution, workload concentration, and operational trends within semiconductor manufacturing and supply chain operations.
 
-## Product Funnel Analysis
+## Data Cleaning
+
+Performed comprehensive data cleaning and validation using SQL to improve the reliability and integrity of the semiconductor supply chain dataset. Removed records containing NULL values, duplicate production entries using the ROW_NUMBER() window function, and records violating business rules such as invalid production, yield, inventory, and capacity utilization values. Applied SQL transformations to replace NULL numeric fields with 0 for accurate aggregation and analysis, standardized product type formatting, and retained only production records with valid product references through JOIN operations. Additionally, filtered out orders with invalid dates or quantities and consolidated the cleaned production data into a structured dataset optimized for downstream manufacturing and supply chain analysis.
+
+## Analysis
 
 Defined the key stages of the payment funnel, from checkout initiation to successful subscription payment. Used SQL techniques, including Common Table Expressions (CTEs) and aggregate functions, to calculate conversion rates at each stage. CASE statements were applied to categorize users based on their progress through the funnel. Drop-off rates were measured to identify critical friction points, and further segmentation was performed to analyze root causes such as payment errors and user behavior. Computed conversion rates and workflow conversion rates to develop a comprehensive understanding of user flow and payment performance across the funnel.
 
@@ -63,7 +67,9 @@ Developed visualizations to effectively communicate insights and highlight key f
 
 # Skills & Tools Used:
 
-**SQL:** CTEs, JOINs, CASE statements, aggregate functions, and subqueries for data extraction, transformation, and funnel analysis
+**SQL:** CTEs, Window functions, JOINs, CASE statements, aggregate functions, and subqueries for data extraction, transformation, and analysis
+
+**Power BI:** DAX queries for creating various measurements, visualizations, KPI Card
 
 **Data Wrangling & Cleaning:** Processed raw subscription data by handling missing values, duplicates, and inconsistencies to ensure data quality
 
