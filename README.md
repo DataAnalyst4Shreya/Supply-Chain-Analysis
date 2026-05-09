@@ -105,6 +105,8 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 
 ![Planning Accuracy Trend](./planning_accuracy.svg)
 
+![Planning Accuracy Trend](./planning_accuracy.svg)
+
 - This visualization tracks execution efficiency against plan over time with respect to year 2025, highlighting how closely actual performance aligns with planned expectations.
 
 - The line chart shows high volatility across months and days, indicating inconsistent execution performance, which is a concern from a planning and operational stability perspective.
