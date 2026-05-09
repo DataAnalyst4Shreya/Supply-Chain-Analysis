@@ -101,11 +101,9 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 
 **1. Planning Accuracy Trend Over Time (2025):**
 
-<img width="387" height="199" alt="image" src="https://github.com/user-attachments/assets/dbc487db-205b-4486-8401-6e568ca150f8" />
-
 ![Planning Accuracy Trend](./planning_accuracy.svg)
 
-![Planning Accuracy Trend](./planning_accuracy.svg)
+
 
 - This visualization tracks execution efficiency against plan over time with respect to year 2025, highlighting how closely actual performance aligns with planned expectations.
 
