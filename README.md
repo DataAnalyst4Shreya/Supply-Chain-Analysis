@@ -57,9 +57,21 @@ Conducted exploratory data analysis using SQL to evaluate the structure, consist
 
 Performed comprehensive data cleaning and validation using SQL to improve the reliability and integrity of the semiconductor supply chain dataset. Removed records containing NULL values, duplicate production entries using the ROW_NUMBER() window function, and records violating business rules such as invalid production, yield, inventory, and capacity utilization values. Applied SQL transformations to replace NULL numeric fields with 0 for accurate aggregation and analysis, standardized product type formatting, and retained only production records with valid product references through JOIN operations. Additionally, filtered out orders with invalid dates or quantities and consolidated the cleaned production data into a structured dataset optimized for downstream manufacturing and supply chain analysis.
 
-## Analysis
+## Analytical Approach
 
-Utilized Common Table Expressions (CTEs), aggregate functions, and SQL calculations to independently measure manufacturing utilization rate and execution efficiency across semiconductor operations. Implemented CASE statements to handle NULL values and ensure accurate, error-free KPI calculations. Applied scalar value multiplication and type conversion techniques to generate precise decimal-based performance metrics. Additionally, leveraged LEFT JOIN operations while calculating daily efficiency to capture planned production days with zero or missing output, enabling more comprehensive operational performance analysis and gap identification. 
++ Performed structured exploratory data analysis to understand relationships between demand, supply, production, and inventory across semiconductor operations.
+
++ Built derived metrics using SQL such as demand-supply gap, execution efficiency, utilization rate, and inventory buffer levels to enable performance evaluation at a granular operational level.
+
++ Used aggregation and window functions to analyze trends across product categories, technology nodes, and time periods to identify inconsistencies and structural inefficiencies.
+
++ Conducted comparative analysis across multiple manufacturing dimensions to detect imbalances such as over-supply conditions, negative buffer gaps, and under-utilized capacity.
+
++ Developed DAX measures in Power BI to compute core demand and supply chain KPIs including Fulfillment KPI, Demand, Supply, Weighted Yield, execution efficiency, utilization vs plan, safety stock, demand-supply gap, and buffer gap, enabling standardized tracking of operational performance across the value chain.
+
++ Built additional DAX-based manufacturing performance KPIs such as weighted utilization, total production, planned output, planned capacity, inventory levels, and production shortfall to evaluate execution efficiency, capacity alignment, and deviations between planned and actual output.
+
++ Transformed raw operational data into KPI-driven datasets to support visualization and deeper business interpretation in Power BI dashboards.
 
 ## Data Visualization
 
