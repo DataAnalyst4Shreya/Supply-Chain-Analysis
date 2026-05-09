@@ -41,11 +41,13 @@ The objective of this analysis is to identify gaps and shortfalls across the sup
 
 # Methodology:
 
-Developed SQL queries to extract, clean, and transform raw supply chain datasets, enabling structured analysis of the supply chain operations.
+Developed SQL queries in Microsoft SQL Server Management Studio (SSMS) to extract, clean, and transform raw supply chain datasets, enabling structured analysis of the supply chain operations.
 
-Built differnt types of visualizations like line chart, matrix, clustered bar chart, KPI Card, Clustered Column Chart, and Table in Power BI to visualize various supply chain metrics.
+Created new measures by writing DAX Measures in Power BI.
 
-Created semiconductor supply chain - entity relationship diagram using Claude and PowerPoint Tools.
+Built differnt types of visualizations like line chart, matrix, clustered bar charts, KPI Card, Clustered Column Charts, and Table in Power BI to visualize various supply chain metrics.
+
+Created semiconductor supply chain - entity relationship diagram using Claude (LLM) and PowerPoint Tools.
 
 
 ## Exploratory Data Analysis
@@ -58,28 +60,30 @@ Performed comprehensive data cleaning and validation using SQL to improve the re
 
 ## Analysis
 
-Defined the key stages of the payment funnel, from checkout initiation to successful subscription payment. Used SQL techniques, including Common Table Expressions (CTEs) and aggregate functions, to calculate conversion rates at each stage. CASE statements were applied to categorize users based on their progress through the funnel. Drop-off rates were measured to identify critical friction points, and further segmentation was performed to analyze root causes such as payment errors and user behavior. Computed conversion rates and workflow conversion rates to develop a comprehensive understanding of user flow and payment performance across the funnel.
+
 
 ## Data Visualization
 
-Developed visualizations to effectively communicate insights and highlight key findings. Bar charts were used to compare subscriptions with and without payment errors, while funnel visualizations illustrated conversion rates across each stage of the payment process. Built line charts to analyze trends in subscription flow across funnel stages over time, identifying patterns in user progression and drop-off behavior. Dashboards were created in Hex Data Science Notebook to present insights in a clear, actionable format for business stakeholders.
+
 
 
 # Skills & Tools Used:
 
-**SQL:** CTEs, Window functions, JOINs, CASE statements, aggregate functions, and subqueries for data extraction, transformation, and analysis
+**SQL:** CTEs, Window functions, JOINs, CASE statements, ISNULL functions, WHERE functions, FLOAT functions, and aggregate functions for data extraction, transformation, and analysis.
 
-**Power BI:** DAX queries for creating various measurements, visualizations, KPI Card
+**Power BI:** Used Power BI to calculate DAX measures relevant for in-depth supply chain analysis. Created diverse kinds of visualizations in Power BI for data storytelling.
 
-**Data Wrangling & Cleaning:** Processed raw subscription data by handling missing values, duplicates, and inconsistencies to ensure data quality
+**Data Wrangling & Cleaning:** Processed raw supply chain data data by handling missing values, duplicates, and inconsistencies to ensure data quality
 
-**Data Modeling:** Designed data flow and structured subscription funnel stages using Lucidchart
+**Data Modeling:** Designed semiconductor supply chain - entity relationship model using Claude (LLM tool) through prompts. Further refined it in Power BI slides.
 
-**Data Visualization:** Built bar and line charts to analyze trends, funnel progression, and user behavior patterns
+**Data Visualization:** Developed interactive dashboards using matrice, table, KPI cards, bar charts, and line charts to analyze key aspects of semiconductor supply chain and manufacturing operations.
 
-**Data Analysis Notebook:** Performed exploratory analysis and dashboarding using Hex
+**SQL Server Management Studio (SSMS) Version 2022:** Performed exploratory data analysis by running SQL queries in SQL Server Management Studio (SSMS) Version 2022.
 
-**Data Warehouse:** Queried and analyzed structured datasets stored in Snowflake
+**Data Source:** Leveraged ChatGPT free version to create synthetic supply chain dataset by writing specific prompts.
+
+**Data Type:** Synthetic Dataset.
 
 
 # Results & Business Recommendation:
