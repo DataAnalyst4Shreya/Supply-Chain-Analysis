@@ -32,10 +32,15 @@ The dataset is structured at a granular level and processed using SQL transforma
 
 Key preparation steps include:
 
-+ Standardization of product and node identifiers
-+ Aggregation of transactional data into analytical grains
-+ Joining demand forecasts with production outputs
-+ Ensuring consistency across time-based dimensions
+The dataset is structured at a transactional level and transformed using SQL and Power BI for analytical modeling.
+
+Key preparation steps include:
+
++ Standardization of product IDs, node identifiers, and key dimensions
++ SQL-based cleaning, joins, and transformation of raw operational data
++ Integration of demand, supply, production, and order datasets into a unified model
++ Creation of Power BI relationships to support cross-functional analysis
++ Development of DAX measures for KPI calculation and time-based insights
 
 The final model supports KPI generation at node, product, and time hierarchy levels.
 
@@ -47,20 +52,26 @@ This section defines how core metrics are derived from base data.
 
 ### 4.1 Demand:
 
-Demand is calculated by summing quantity ordered from orders table.
+Demand represents the total customer requirement captured from order data.
 
-+ Aggregate function: SUM function
-+ Source: orders table
-+ Purpose: To know the total demand
++ Formula: SUM(quantity_ordered)
+
++ Interpretation:
+    + Higher demand indicates strong customer requirement and market pull
+    + Lower demand may indicate weak sales, reduced market activity, or forecasting gaps
+    + Used as the baseline for evaluating supply adequacy and fulfillment performance
 
 
 ### 4.2 Supply
 
 Supply is calculated by summing quantity produced from productions table.
 
-+ Aggregated function: SUM function
-+ Source: productions table
-+ Purpose: To know the total supply
++ Formula: SUM function
+
++ Interpretation
+    + Higher supply indicates strong production capacity and availability of goods
+    + Lower supply may indicate production constraints, capacity limitations, or operational inefficiencies
+    + Used to assess the ability of the system to meet demand effectively
 
   
 ### 4.3 Demand–Supply Gap
@@ -69,6 +80,7 @@ This metric identifies structural imbalance between demand and supply.
 
 + Formula:
 Demand – Supply
+
 + Interpretation:
     + Positive → Under-supply (unmet demand)
     + Negative → Over-supply (excess production)
@@ -157,7 +169,7 @@ Captures unmet demand conditions.
     + Persistent shortfall → Signals structural capacity or supply chain constraints that need corrective action
 
 
-## 5.6. Fulfillment Rate
+### 5.6. Fulfillment Rate
 
 + Logic:
 Measures how effectively customer demand is being met by comparing fulfilled quantity against total ordered quantity.
@@ -175,10 +187,10 @@ Fulfillment Rate = ∑(Quantity Fulfilled) Divided By ∑(Quantity Ordered)
 + Logic:
 The analysis is subject to the following limitations:
 
-+ External market dynamics are not explicitly modeled
-+ Capacity is treated as fixed within analysis periods
-+ Forecast demand is assumed as reference baseline
-+ Yield is treated as deterministic rather than probabilistic
++ External market factors (pricing, competition, macroeconomic conditions) are not included in the analysis.
++ Production capacity is assumed to remain constant within each analysis period.
++ Demand is treated as a fixed reference input rather than a forecasted or probabilistic variable.
++ Yield is modeled deterministically using observed production data without probabilistic variation.
 
 
 # Conclusion
