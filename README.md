@@ -147,6 +147,8 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 **4. Yield Performance By Product:** 
 
 
+<img width="1189" height="789" alt="gemini_yield performance by product" src="https://github.com/user-attachments/assets/f5efe6af-283d-4277-98ab-948f72beb402" />
+
 
 - The clustered bar chart highlights the yield percentage across all products, providing insight into the overall production quality and manufacturing efficiency of the company.
 
@@ -159,16 +161,23 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 - Overall, the chart indicates that yield performance across products remains below the desired benchmark, highlighting the need for process optimization, quality control improvements, and better manufacturing efficiency to reduce waste, improve operational stability, and support long-term business sustainability.
 
 
-**5. Yield Performance By Product:** 
+**5. Technology Node Capacity Constraint: Demand vs Supply:** 
 
 
+<img width="1183" height="690" alt="gemini_technology node_demand vs supply" src="https://github.com/user-attachments/assets/431d58a7-b3e3-45de-b644-105a36fddd29" />
 
 
+- The visual chart illustrates the gap between demand and supply across different technology nodes, helping identify areas with significant operational imbalance.
 
+- Across all technology nodes — 7nm, 10nm, and 14nm — demand consistently exceeds supply, indicating an inability to meet market requirements effectively.
 
+- The substantial demand-supply gap suggests possible production limitations, supply chain bottlenecks, equipment inefficiencies, or inadequate manufacturing capacity within fabs.
 
+- Persistent shortages may lead to delayed customer deliveries, lower customer satisfaction, and potential loss of future contracts and business opportunities.
 
+- The imbalance also indicates that current production capacity may not be scaling efficiently with growing market demand, highlighting the need for better capacity planning and operational optimization.
 
+- Continued supply shortages could increase dependency on external foundries and third-party suppliers, potentially resulting in higher operational costs and reduced control over manufacturing processes.
 
 
 **6. End-to-end Supply Chain Performance Matrix:** 
@@ -185,15 +194,6 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 - Overall, the analysis reveals a significant imbalance between demand, supply, and inventory positioning, reflecting weaknesses in supply chain synchronization that can negatively impact revenue, service levels, and business credibility.
 
 
-
-
-
-
-
-
-
-
-
 **Business Recommendations:**
 
 - Strengthen forecasting accuracy by leveraging historical trends, real-time demand signals, seasonality patterns, and market variables to improve planning precision and maintain execution efficiency closer to targeted levels.
@@ -207,6 +207,10 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 - Reduce excess inventory and carrying costs by implementing demand-driven inventory planning that accounts for supply chain constraints, lead-time fluctuations, and product-level consumption patterns.
 
 - Enhance operational decision-making through a data-driven supply chain framework that integrates forecasting, inventory, production, and fulfillment insights to improve efficiency, reduce waste, and maximize profitability.
+
+- Strengthen quality control measures and implement continuous monitoring across production stages to identify defects early, improve production consistency, and enhance overall yield performance.
+
+- Optimize manufacturing processes and equipment efficiency to reduce material wastage, lower operational costs, improve resource utilization, and support a more stable and efficient supply chain.
 
 - Reduce dependency on external foundries by maximizing internal fab utilization through real-time KPI-driven production monitoring and dynamic capacity allocation across manufacturing facilities.
 
