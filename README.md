@@ -96,6 +96,8 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 
 **Data Type:** Synthetic Dataset.
 
+**Large Language Module (LLM):** ChatGPT, Claude, and Gemini. Used these tools for creating visualizations and for understanding the business problem better, supply chain metrics, and to research about analysis. Pulled synthetic data by prompting using Claude.
+
 
 # Results & Business Recommendation:
 
