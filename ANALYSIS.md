@@ -1,13 +1,13 @@
 # Analysis – KPI Engineering & Analytical Framework
 
-**1. Objective of the Analysis:**
+## 1. Objective of the Analysis:
 
 This document explains the underlying logic, structure, and derivation of the key performance indicators (KPIs) used in the supply chain and manufacturing dashboard.
 
 Unlike the README, which focuses on insights and business outcomes, this section focuses on how metrics are constructed, how they interact, and what they represent at a system level.
 
 
-**2. Analytical Scope:**
+## 2. Analytical Scope:
 
 The analysis evaluates semiconductor manufacturing performance across:
 
@@ -26,7 +26,7 @@ The core objective is to understand system behavior across:
 + Structural Imbalances (inventory, shortfall, buffer gaps)
 
   
-**3. Data Foundation (High-Level Overview):**
+## 3. Data Foundation (High-Level Overview):
 
 The dataset is structured at a granular level and processed using SQL transformations and Power BI modeling.
 
@@ -45,7 +45,7 @@ Key preparation steps include:
 The final model supports KPI generation at node, product, and time hierarchy levels.
 
 
-**4. KPI Construction Methodology:**
+## 4. KPI Construction Methodology:
 
 This section defines how core metrics are derived from base data.
 
@@ -124,7 +124,7 @@ Actual Output / Planned Output
     + Lower value → Planning-execution mismatch, highlighting delays, disruptions, or inaccurate forecasting
 
 
-### 5.3 Safety Stock
+### 4.7 Safety Stock
 
 + Logic:
 Safety stock helps in identifying the buffer inventory maintained to prevent stockouts during demand fluctuations or supply delays.
@@ -140,7 +140,7 @@ Safety stock helps in identifying the buffer inventory maintained to prevent sto
     + Lower/Negative value → Increased risk of stock shortages and fulfillment delays
 
 
-### 5.4 Buffer Gap
+### 4.8 Buffer Gap
 
 + Logic:
 Buffer gap helps in identifying the difference between current stock level and required safety stock level.
@@ -153,7 +153,7 @@ Stock Level - Safety Stock
     + Negative → Risk of stockouts and insufficient safety inventory
 
 
-### 5.5 Shortfall
+### 4.9 Shortfall
 
 Captures unmet demand conditions.
 
@@ -169,7 +169,7 @@ Captures unmet demand conditions.
     + Persistent shortfall → Signals structural capacity or supply chain constraints that need corrective action
 
 
-### 5.6. Fulfillment Rate
+### 4.10. Fulfillment Rate
 
 + Logic:
 Measures how effectively customer demand is being met by comparing fulfilled quantity against total ordered quantity.
@@ -182,7 +182,7 @@ Fulfillment Rate = ∑(Quantity Fulfilled) Divided By ∑(Quantity Ordered)
     + Lower value → Unmet demand, fulfillment delays, or supply constraints
 
 
-## 6. Analytical Constraints
+## 5. Analytical Constraints
 
 + Logic:
 The analysis is subject to the following limitations:
