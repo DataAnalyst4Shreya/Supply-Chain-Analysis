@@ -102,11 +102,26 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 **1. Planning Accuracy Trend Over Time (2025):**
 
 ```mermaid
+%%{
+  init: {
+    'theme': 'dark',
+    'themeVariables': {
+      'xyChart': {
+        'backgroundColor': '#0d1117',
+        'plotColor': '#161b22',
+        'titleColor': '#58a6ff',
+        'xAxisLabelColor': '#8b949e',
+        'yAxisLabelColor': '#8b949e',
+        'chartLineWidth': '1.5'
+      }
+    }
+  }
+}%%
 xychart-beta
     title "Planning Accuracy Trend Over Time"
-    x-axis ["Feb", "Mar", "Apr", "May", "Jun"]
+    x-axis ["Feb 2025", "Mar 2025", "Apr 2025", "May 2025", "Jun 2025"]
     y-axis "Execution Efficiency (%)" 100 --> 350
-    line [184, 352, 141, 349, 128, 341, 130, 155, 351, 139, 155]
+    line [184, 350, 190, 352, 141, 290, 160, 325, 150, 310, 175, 255, 155, 250, 141, 185, 145, 190, 150, 349, 130, 315, 128, 337, 145, 280, 170, 330, 180, 320, 140, 335, 131, 285, 341, 130, 290, 160, 325, 142, 230, 138, 248, 165, 220, 150, 135, 180, 200, 150, 240, 165, 190, 165, 300, 180, 325, 145, 315, 135, 140, 295, 131, 135, 351, 150, 240, 139, 325, 290, 245, 165, 330, 335, 190, 180, 240, 155]
 ```
 
 
