@@ -101,7 +101,13 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 
 **1. Planning Accuracy Trend Over Time (2025):**
 
-![Planning Accuracy Trend](./planning_accuracy.svg)
+```mermaid
+xychart-beta
+    title "Planning Accuracy Trend Over Time"
+    x-axis ["Feb", "Mar", "Apr", "May", "Jun"]
+    y-axis "Execution Efficiency (%)" 100 --> 350
+    line [184, 352, 141, 349, 128, 341, 130, 155, 351, 139, 155]
+```
 
 
 
