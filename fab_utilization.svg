@@ -1,0 +1,79 @@
+<svg viewBox="0 0 640 380" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, sans-serif">
+  <style>
+    .bar-over { fill: #F97316; }
+    .bar-under { fill: #3B82F6; }
+    .bar-over:hover { fill: #EA6600; cursor: pointer; }
+    .bar-under:hover { fill: #2563EB; cursor: pointer; }
+    .label { fill: #374151; font-size: 13px; font-weight: 700; }
+    .value { fill: #fff; font-size: 12px; font-weight: 500; }
+    .axis-label { fill: #6B7280; font-size: 11px; font-weight: 700; }
+    .title { fill: #111827; font-size: 15px; font-weight: 500; }
+    .plan-line { stroke: #9CA3AF; stroke-width: 1.5; stroke-dasharray: 4 3; }
+  </style>
+
+  <text x="108" y="28" class="title">Fab utilization vs plan (%)</text>
+
+  <!-- X axis ticks -->
+  <text x="108" y="355" class="axis-label">0%</text>
+  <text x="201" y="355" class="axis-label">25%</text>
+  <text x="294" y="355" class="axis-label">50%</text>
+  <text x="387" y="355" class="axis-label">75%</text>
+  <text x="477" y="355" class="axis-label">100%</text>
+  <text x="567" y="355" class="axis-label">150%+</text>
+
+  <!-- axis line -->
+  <line x1="108" y1="340" x2="620" y2="340" stroke="#E5E7EB" stroke-width="1"/>
+
+  <!-- 100% plan reference line -->
+  <line x1="482" y1="44" x2="482" y2="340" class="plan-line"/>
+  <text x="482" y="41" class="axis-label" text-anchor="middle">plan</text>
+
+  <!-- Data rows: maxVal=200, track width=512px starting at x=108 -->
+  <!-- Fab_7: 173.98% -> 173.98/200 * 512 = 445.39 -->
+  <text x="100" y="73" class="label" text-anchor="end">Fab_7</text>
+  <rect x="108" y="53" width="446" height="28" rx="4" class="bar-over"/>
+  <text x="548" y="72" class="value">173.98%</text>
+
+  <!-- Fab_1: 155.03% -> 397.28 -->
+  <text x="100" y="113" class="label" text-anchor="end">Fab_1</text>
+  <rect x="108" y="93" width="397" height="28" rx="4" class="bar-over"/>
+  <text x="509" y="112" class="value">155.03%</text>
+
+  <!-- Fab_8: 149.90% -> 384.06 -->
+  <text x="100" y="153" class="label" text-anchor="end">Fab_8</text>
+  <rect x="108" y="133" width="384" height="28" rx="4" class="bar-over"/>
+  <text x="496" y="152" class="value">149.90%</text>
+
+  <!-- Fab_3: 113.83% -> 291.41 -->
+  <text x="100" y="193" class="label" text-anchor="end">Fab_3</text>
+  <rect x="108" y="173" width="291" height="28" rx="4" class="bar-over"/>
+  <text x="403" y="192" class="value">113.83%</text>
+
+  <!-- Fab_4: 110.74% -> 283.50 -->
+  <text x="100" y="233" class="label" text-anchor="end">Fab_4</text>
+  <rect x="108" y="213" width="284" height="28" rx="4" class="bar-over"/>
+  <text x="396" y="232" class="value">110.74%</text>
+
+  <!-- Fab_5: 69.81% -> 178.71 -->
+  <text x="100" y="273" class="label" text-anchor="end">Fab_5</text>
+  <rect x="108" y="253" width="179" height="28" rx="4" class="bar-under"/>
+  <text x="291" y="272" class="value">69.81%</text>
+
+  <!-- Fab_6: 66.78% -> 170.96 -->
+  <text x="100" y="313" class="label" text-anchor="end">Fab_6</text>
+  <rect x="108" y="293" width="171" height="28" rx="4" class="bar-under"/>
+  <text x="283" y="312" class="value">66.78%</text>
+
+  <!-- Fab_2: 62.68% -> 160.46 -->
+  <text x="100" y="343" class="label" text-anchor="end" dy="-10">Fab_2</text>
+  <rect x="108" y="323" class="bar-under" width="160" height="28" rx="4"/>
+  <text x="272" y="342" class="value">62.68%</text>
+
+  <!-- Legend -->
+  <rect x="108" y="362" width="10" height="10" rx="2" fill="#3B82F6"/>
+  <text x="122" y="372" class="axis-label">Under plan</text>
+  <rect x="195" y="362" width="10" height="10" rx="2" fill="#F97316"/>
+  <text x="209" y="372" class="axis-label">Over plan</text>
+  <line x1="282" y1="367" x2="290" y2="367" stroke="#9CA3AF" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="295" y="372" class="axis-label">100% plan</text>
+</svg>
