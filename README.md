@@ -117,8 +117,7 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 **2. Fab Utilization By Plan (%):** 
 
 
-<img width="1276" height="816" alt="Gemini_fab_utilization_vs_plan" src="https://github.com/user-attachments/assets/daa5ae0f-6f69-44ad-9245-effcbebe40be" />
-
+<img width="1276" height="816" alt="gemini_fab_utilization_vs_plan" src="https://github.com/user-attachments/assets/db8a0a03-68e9-4b2c-8bbe-591cfde49532" />
 
 
 - The clustered bar chart compares actual utilization against planned capacity across different fabs, highlighting significant operational imbalances.
