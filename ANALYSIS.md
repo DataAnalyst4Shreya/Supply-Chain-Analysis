@@ -1,13 +1,13 @@
 # Analysis – KPI Engineering & Analytical Framework
 
-## 1. Objective of the Analysis:
+## 1. Objective of the Analysis
 
 This document explains the underlying logic, structure, and derivation of the key performance indicators (KPIs) used in the supply chain and manufacturing dashboard.
 
 Unlike the README, which focuses on insights and business outcomes, this section focuses on how metrics are constructed, how they interact, and what they represent at a system level.
 
 
-## 2. Analytical Scope:
+## 2. Analytical Scope
 
 The analysis evaluates semiconductor manufacturing performance across:
 
@@ -26,7 +26,7 @@ The core objective is to understand system behavior across:
 + Structural Imbalances (inventory, shortfall, buffer gaps)
 
   
-## 3. Data Foundation (High-Level Overview):
+## 3. Data Foundation (High-Level Overview)
 
 The dataset is structured at a granular level and processed using SQL transformations and Power BI modeling.
 
@@ -45,7 +45,7 @@ Key preparation steps include:
 The final model supports KPI generation at node, product, and time hierarchy levels.
 
 
-## 4. KPI Construction Methodology:
+## 4. KPI Construction Methodology
 
 This section defines how core metrics are derived from base data.
 
