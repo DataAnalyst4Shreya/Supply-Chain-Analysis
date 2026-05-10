@@ -12,16 +12,18 @@ Unlike the README, which focuses on insights and business outcomes, this section
 The analysis evaluates semiconductor manufacturing performance across:
 
 + Technology nodes
-+ Product categories
++ Product IDs
++ Inventory
++ Yield Percent
 + Time periods
 
 The core objective is to understand system behavior across:
 
 + Demand vs Supply alignment
-+ Production efficiency
-+ Capacity utilization
-+ Execution accuracy
-+ Structural imbalances (inventory, shortfall, buffer gaps)
++ Production Efficiency
++ Utilization Percentage
++ Execution Accuracy
++ Structural Imbalances (inventory, shortfall, buffer gaps)
 
   
 **3. Data Foundation (High-Level Overview):**
@@ -45,20 +47,20 @@ This section defines how core metrics are derived from base data.
 
 ### 4.1 Demand:
 
-Demand represents the forecasted requirement across products and technology nodes.
+Demand is calculated by summing quantity ordered from orders table.
 
-+ Aggregated at: Node + Time period
-+ Source: Forecasting dataset
-+ Purpose: Baseline requirement for supply planning
++ Aggregate function: SUM function
++ Source: orders table
++ Purpose: To know the total demand
 
 
 ### 4.2 Supply
 
-Supply represents actual production output after operational constraints and yield effects.
+Supply is calculated by summing quantity produced from productions table.
 
-+ Aggregated from production output data
-+ Adjusted for yield losses
-+ Represents realized deliverable output
++ Aggregated function: SUM function
++ Source: productions table
++ Purpose: To know the total supply
 
   
 ### 4.3 Demand–Supply Gap
@@ -72,23 +74,29 @@ Demand – Supply
     + Negative → Over-supply (excess production)
 
 
-### 4.4 Yield (Weighted)
+### 4.4 Weighted Yield
 
-Yield measures production efficiency and quality of output.
-
-+ Formula:
-Good Output / Total Input
-+ Weighted by production volume to avoid distortion from low-volume nodes
-+ Ensures fair comparison across heterogeneous manufacturing scales
-
-
-### 4.5 Capacity Utilization
-
-Capacity utilization measures how effectively available production capacity is used.
+Weighted Yield measure helps in identifying overall production quality and manufacturing efficiency by considering the impact of production volume on yield performance.
 
 + Formula:
-Actual Production / Available Capacity
+∑(Quantity Produced × Yield %) Divided By ∑(Quantity Produced) 
+	​
++ Interpretation:
+    + Higher value → Better production quality and manufacturing efficiency
+    + Lower value → Higher defects, wastage, or production inefficiencies
+
+
+### 4.5 Utilization Percentage
+
+Utilization percentage examines how effectively actual production is aligned with planned capacity.
+
++ Formula:
+Actual Production / Planned Capacity
 + Compared against planned capacity to assess operational efficiency
+
++ Interpretation:
+    + Higher value → Better capacity utilization and efficient use of manufacturing resources
+    + Lower value → Underutilized capacity, indicating idle resources or production inefficiencies
 
 
 ### 4.6 Execution Efficiency
@@ -99,47 +107,41 @@ Execution efficiency evaluates alignment between planning and execution.
 Actual Output / Planned Output
 + Highlights deviations between production planning and real execution
 
-
-## 5. Derived Analytical Layers
-
-These KPIs are constructed by combining foundational metrics to provide deeper operational insights.
-
-
-## 5.1 Weighted Utilization
-
-Weighted utilization adjusts raw utilization by production contribution across nodes.
-
-+ Purpose: Prevent distortion from low-volume nodes
-+ Logic: Utilization weighted by node-level production share
-+ Approach: Aggregation using weighted contribution across nodes
++ Interpretation:
+    + Higher value → Strong alignment between planned and actual production, indicating effective execution
+    + Lower value → Planning-execution mismatch, highlighting delays, disruptions, or inaccurate forecasting
 
 
-### 5.2 Total Production
+### 5.3 Safety Stock
 
-Represents aggregated actual output across all nodes.
++ Logic:
+Safety stock helps in identifying the buffer inventory maintained to prevent stockouts during demand fluctuations or supply delays.
 
-+ Simple SUM of production output
-+ Used as a base metric for multiple derived KPIs
++ Assumption:
+ + Due to the absence of lead time variability and demand deviation data, minimum inventory level was used as a proxy for safety stock.
+ + Assumed that the lowest stock level maintained in the dataset represents the minimum buffer inventory required to avoid stockouts.
+ + The safety stock calculation in this project is intended for analytical interpretation rather than operational inventory planning precision.
+ + This assumption helps evaluate inventory risk, supply continuity, and stock availability trends within the supply chain.
+
++ Interpretation:
+    + Higher value → Better protection against supply chain disruptions
+    + Lower/Negative value → Increased risk of stock shortages and fulfillment delays
 
 
-### 5.3 Planned vs Actual Output (Variance)
+### 5.4 Buffer Gap
 
-Measures deviation between planned and actual production.
++ Logic:
+Buffer gap helps in identifying the difference between current stock level and required safety stock level.
 
 + Formula:
-Actual Output – Planned Output
-+ Used to evaluate execution accuracy
+Stock Level - Safety Stock
+
++ Interpretation:
+    + Positive → Sufficient inventory buffer available
+    + Negative → Risk of stockouts and insufficient safety inventory
 
 
-### 5.4 Inventory Position
-
-Represents accumulated surplus over time when supply exceeds demand.
-
-+ Logic: Running cumulative (Supply – Demand)
-+ Helps identify structural overproduction patterns
-
-
-### 5.5 Shortfall Metric
+### 5.5 Shortfall
 
 Captures unmet demand conditions.
 
@@ -148,31 +150,29 @@ Captures unmet demand conditions.
    + Else → 0
 + Used to identify risk of demand non-fulfillment
 
++ Interpretation:
 
-## 6. Analytical Design Considerations
-
-Several design principles were applied to ensure robustness and comparability:
-
-+ Node-level aggregation was used to capture structural differences across technology maturity levels
-+ Weighted measures were introduced to reduce bias from volume imbalance
-+ Time-based grouping was used to smooth short-term volatility
-+ Derived KPIs were built on standardized base measures for consistency
+    + Higher value → Greater unmet demand, indicating supply shortages and potential lost sales
+    + Zero value → No demand-supply mismatch, meaning demand is fully fulfilled
+    + Persistent shortfall → Signals structural capacity or supply chain constraints that need corrective action
 
 
-## 7. KPI Dependency Structure
+## 5.6. Fulfillment Rate
 
-The KPIs are interdependent and form a hierarchical system:
++ Logic:
+Measures how effectively customer demand is being met by comparing fulfilled quantity against total ordered quantity.
 
-+ Yield → influences effective Supply
-+ Supply + Demand → defines Gap
-+ Gap → drives Inventory and Shortfall behavior
-+ Capacity → influences Utilization and Execution Efficiency
++ Formula:
+Fulfillment Rate = ∑(Quantity Fulfilled) Divided By ∑(Quantity Ordered)
 
-This structure ensures that operational inefficiencies can be traced back to root drivers.
++ Interpretation:
+    + Higher value → Strong order fulfillment performance and better customer satisfaction
+    + Lower value → Unmet demand, fulfillment delays, or supply constraints
 
 
-## 8. Analytical Constraints
+## 6. Analytical Constraints
 
++ Logic:
 The analysis is subject to the following limitations:
 
 + External market dynamics are not explicitly modeled
@@ -181,7 +181,7 @@ The analysis is subject to the following limitations:
 + Yield is treated as deterministic rather than probabilistic
 
 
-## 9. Summary of Analytical Framework
+# Conclusion
 
 This analysis establishes a structured KPI framework for evaluating semiconductor manufacturing and supply chain performance.
 
