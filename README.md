@@ -131,7 +131,8 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 
 **3. Demand vs Fulfillment By Product:** 
 
-<img width="1276" height="816" alt="gemini_fab_utilization_vs_plan" src="https://github.com/user-attachments/assets/f31d4bfb-2a1f-447d-94b2-c1737623bb21" />
+
+<img width="1322" height="800" alt="gemini_demand vs fulfillment by product" src="https://github.com/user-attachments/assets/6e4fa7ad-c633-4dee-8bec-c54935fe6a9c" />
 
 
 - The visualization presents a clustered column chart comparing demand versus fulfillment across different products, providing insights into how effectively production aligns with customer demand.
@@ -143,7 +144,34 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 - The analysis highlights that although most products are adequately fulfilled, these five under-supplied product variants could still create notable supply chain pressure, potentially leading to missed sales opportunities, customer dissatisfaction, and revenue decline.
 
 
-**4. End-to-end Supply Chain Performance Matrix:** 
+**4. Yield Performance By Product:** 
+
+
+
+- The clustered bar chart highlights the yield percentage across all products, providing insight into the overall production quality and manufacturing efficiency of the company.
+
+- None of the products achieved a yield rate above 95%, indicating that the manufacturing process is operating below optimal efficiency. Lower yield percentages can increase production defects, rework, and manufacturing costs while placing additional pressure on the supply chain.
+
+- Most products recorded yield percentages within the range of 86.14% to 94.67%, reflecting inconsistent production performance. This may lead to material wastage, higher operational expenses, longer production cycles, and inefficient resource utilization.
+
+- Product ID 21 recorded the lowest yield percentage at 84.91%, making it a critical area of concern. Such a low yield level may significantly affect production efficiency, inventory planning, supply reliability, and overall business profitability.
+
+- Overall, the chart indicates that yield performance across products remains below the desired benchmark, highlighting the need for process optimization, quality control improvements, and better manufacturing efficiency to reduce waste, improve operational stability, and support long-term business sustainability.
+
+
+**5. Yield Performance By Product:** 
+
+
+
+
+
+
+
+
+
+
+
+**6. End-to-end Supply Chain Performance Matrix:** 
 
 <img width="266" height="314" alt="supply chain overall" src="https://github.com/user-attachments/assets/2b5a743c-eee4-4f74-968f-6e1b2ea45519" />
 
@@ -155,6 +183,15 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 - Product IDs 16 and 7 show a negative buffer gap, meaning inventory levels have fallen below the defined safety stock threshold, creating a high risk of stockouts and potential revenue loss.
 
 - Overall, the analysis reveals a significant imbalance between demand, supply, and inventory positioning, reflecting weaknesses in supply chain synchronization that can negatively impact revenue, service levels, and business credibility.
+
+
+
+
+
+
+
+
+
 
 
 **Business Recommendations:**
