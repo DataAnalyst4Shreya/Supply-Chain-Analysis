@@ -101,7 +101,8 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 
 **1. Planning Accuracy Trend Over Time (2025):**
 
-<img width="1435" height="736" alt="image_f87e6730" src="https://github.com/user-attachments/assets/53e34491-769b-4d84-b72c-16745ac9111f" />
+<img width="1435" height="736" alt="gemini_plan accuracry trend" src="https://github.com/user-attachments/assets/18184997-4b11-40eb-9e19-0a20b0917d8e" />
+
 
 
 - This visualization tracks execution efficiency against plan over time with respect to year 2025, highlighting how closely actual performance aligns with planned expectations.
@@ -115,7 +116,9 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 
 **2. Fab Utilization By Plan (%):** 
 
-![Fab Utilization vs Plan](fab_utilization.svg)
+
+<img width="1276" height="816" alt="Gemini_fab_utilization_vs_plan" src="https://github.com/user-attachments/assets/daa5ae0f-6f69-44ad-9245-effcbebe40be" />
+
 
 
 - The clustered bar chart compares actual utilization against planned capacity across different fabs, highlighting significant operational imbalances.
