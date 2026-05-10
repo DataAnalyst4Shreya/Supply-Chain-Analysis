@@ -44,9 +44,9 @@ Developed SQL queries in Microsoft SQL Server Management Studio (SSMS) to extrac
 
 Created new measures by writing DAX Measures in Power BI.
 
-Built differnt types of visualizations like line chart, matrix, clustered bar charts, KPI Card, Clustered Column Charts, and Table in Power BI to visualize various supply chain metrics.
+Built differnt types of visualizations like line chart, matrix, clustered bar charts, KPI Card, Clustered Column Charts, and Table in Power BI to visualize various supply chain metrics. Further refined the visual diagrams using Gemini (LLM).
 
-Created semiconductor supply chain - entity relationship diagram using Claude (LLM) and PowerPoint Tools.
+Designed semiconductor supply chain - entity relationship diagram using Claude (LLM) and PowerPoint Tools.
 
 
 ## Exploratory Data Analysis
@@ -94,10 +94,9 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 
 **Data Source:** Leveraged AI-assisted prompt engineering using ChatGPT to generate a synthetic semiconductor supply chain dataset for analytical modeling, visualization, and business problem-solving.
 
-**Data Type:** Synthetic Dataset.
+**Data Type:** Synthetic Dataset was created using ChatGPT prompts.
 
-**Large Language Module (LLM):** ChatGPT, Claude, and Gemini. Used these tools for creating visualizations and for understanding the business problem better, supply chain metrics, and to research about analysis. Pulled synthetic data by prompting using Claude.
-
+**Large Language Module (LLM):** ChatGPT, Claude, and Gemini were used to support the project. ChatGPT was used for analysis support, understanding the business problem, and refining supply chain metrics. Gemini was used for creating visualizations. Claude was used for generating synthetic data through prompting.
 
 # Results & Business Recommendation:
 
