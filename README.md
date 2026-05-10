@@ -132,7 +132,8 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 
 **3. Demand vs Fulfillment By Product:** 
 
-<img width="342" height="207" alt="Demand vs Product Fulfillment" src="https://github.com/user-attachments/assets/e9e39b1e-144c-4fee-a9e4-43cfb6c312eb" />
+<img width="1276" height="816" alt="gemini_fab_utilization_vs_plan" src="https://github.com/user-attachments/assets/f31d4bfb-2a1f-447d-94b2-c1737623bb21" />
+
 
 - The visualization presents a clustered column chart comparing demand versus fulfillment across different products, providing insights into how effectively production aligns with customer demand.
 
