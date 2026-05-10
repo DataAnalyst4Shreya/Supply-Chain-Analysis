@@ -116,7 +116,7 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 
 **2. Fab Utilization By Plan (%):** 
 
-<img width="326" height="209" alt="Fab Utilization vs Plan" src="https://github.com/user-attachments/assets/314ec525-406f-484f-963d-542edf4ae156" />
+![Fab Utilization vs Plan](fab_utilization.svg)
 
 
 - The clustered bar chart compares actual utilization against planned capacity across different fabs, highlighting significant operational imbalances.
