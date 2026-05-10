@@ -164,7 +164,7 @@ Developed comprehensive supply chain and manufacturing visualizations to provide
 **5. Technology Node Capacity Constraint: Demand vs Supply:** 
 
 
-<img width="1183" height="690" alt="gemini_technology node_demand vs supply" src="https://github.com/user-attachments/assets/431d58a7-b3e3-45de-b644-105a36fddd29" />
+<img width="1344" height="784" alt="Gemini_technology node" src="https://github.com/user-attachments/assets/92ba83dd-939e-4a14-b421-4042a59c758e" />
 
 
 - The visual chart illustrates the gap between demand and supply across different technology nodes, helping identify areas with significant operational imbalance.
