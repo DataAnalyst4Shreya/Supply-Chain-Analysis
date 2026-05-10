@@ -50,7 +50,7 @@ The final model supports KPI generation at node, product, and time hierarchy lev
 This section defines how core metrics are derived from base data.
 
 
-### 4.1 Demand:
+### 4.1 Demand
 
 Demand represents the total customer requirement captured from order data.
 
@@ -64,9 +64,9 @@ Demand represents the total customer requirement captured from order data.
 
 ### 4.2 Supply
 
-Supply is calculated by summing quantity produced from productions table.
+Supply represents the total production output available to meet demand, derived from the productions table.
 
-+ Formula: SUM function
++ Formula: SUM(quantity_produced)
 
 + Interpretation
     + Higher supply indicates strong production capacity and availability of goods
